@@ -4,6 +4,7 @@
   "description": "This is testing repo of electron js to test new features related to Electron js",
   "main": "main.js",
   "dependencies": {
+    "electron-updater": "^5.6.0",
     "7zip-bin": "^5.2.0",
     "agent-base": "^6.0.2",
     "ajv": "^6.12.6",
@@ -65,10 +66,6 @@
     "dotenv-expand": "^5.1.0",
     "eastasianwidth": "^0.2.0",
     "ejs": "^3.1.10",
-    "electron": "^33.2.1",
-    "electron-builder-squirrel-windows": "^24.13.3",
-    "electron-publish": "^24.13.1",
-    "electron-updater": "^6.3.9",
     "emoji-regex": "^8.0.0",
     "end-of-stream": "^1.4.4",
     "env-paths": "^2.2.1",
@@ -220,12 +217,18 @@
   },
   "scripts": {
     "start": "electron .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "electron-builder"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
 "build": {
+  "nsis": {
+    "oneClick": false,
+    "allowToChangeInstallationDirectory": true,
+    "createDesktopShortcut": true
+  },
   "publish": [
     {
       "provider": "github",
